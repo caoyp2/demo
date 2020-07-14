@@ -1,0 +1,9 @@
+异常方法为： show
+异常类型为： NullPointerException
+异常信息为： null
+--------------------
+异常方法为： div
+异常类型为： ArithmeticException
+异常信息为： / by zero
+--------------------
+本次共发现 2 个异常！
