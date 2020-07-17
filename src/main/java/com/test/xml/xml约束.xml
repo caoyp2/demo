@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE students SYSTEM "student.dtd"> <!--添加dtd约束文件-->
+<students>
+    <student>
+        <name>zhangsan</name>
+        <age>20</age>
+        <sex>1</sex>
+    </student>
+</students>
+

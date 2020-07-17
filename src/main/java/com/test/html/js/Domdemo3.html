@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .head {
+            text-align: center;
+        }
+        #tableCount {
+            width: 500px;
+        }
+        tr {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="head" class="head">
+        姓名：
+        <input type="text" id="name"/>
+        年龄：
+        <input type="text" id="age"/>
+        <input type="button" value="添加" id="addbtn">
+    </div>
+    <table id="tableCount" border="1" align="center">
+        <tr>
+            <td>姓名</td>
+            <td>年龄</td>
+            <td>操作</td>
+        </tr>
+    </table>
+    <script>
+        var addbtn = document.getElementById("addbtn");
+        addbtn.onclick = function (ev) {
+            var name_value = document.getElementById("name").value;
+            var age_value = document.getElementById("age").value;
+            if(name_value == ""){
+                alert("请输入名称！");
+                return;
+            }
+            if(age_value == ""){
+                alert("请输入年龄！");
+                return;
+            }
+            var tableCount = document.getElementById("tableCount");
+            var td_name = document.createElement("td");
+            var td_age = document.createElement("td");
+            var td_operate = document.createElement("td");
+            var operate = document.createElement("a");
+            operate.onclick = function (ev1) {
+                var trEle = operate.parentElement.parentElement;
+                tableCount.removeChild(trEle);
+            };
+            operate.innerHTML = "删除";
+            operate.setAttribute("href","#");
+            td_name.innerHTML = name_value;
+            td_age.innerHTML = age_value;
+            td_operate.appendChild(operate);
+            var tr = document.createElement("tr");
+            tr.appendChild(td_name);
+            tr.appendChild(td_age);
+            tr.appendChild(td_operate);
+            tableCount.appendChild(tr);
+        }
+    </script>
+</body>
+</html>
