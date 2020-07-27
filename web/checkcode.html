@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+    <img  id="checkcode" src="/demo/servletcode">
+
+    <script>
+        var checkcode = document.getElementById("checkcode");
+        checkcode.onclick = function (ev) {
+            var time = new Date().getTime();
+            checkcode.setAttribute("src","/demo/servletcode?" + time);
+        }
+    </script>
+</body>
+</html>

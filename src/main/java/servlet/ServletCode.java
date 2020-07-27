@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.Random;
 
 /*
     生成验证码
@@ -38,7 +39,8 @@ public class ServletCode extends HttpServlet {
         g.drawRect(0,0,width -1, height -1);
 
         //写验证码
-        g.drawString("2",20,25);
+        int number = new Random().nextInt(10);
+        g.drawString(number + "",20,25);
         g.drawString("3",40,25);
         g.drawString("4",60,25);
 
